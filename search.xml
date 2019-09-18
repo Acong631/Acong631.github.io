@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[about]]></title>
+    <url>%2F2019%2F09%2F18%2Fabout%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>666</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hello word]]></title>
     <url>%2F2019%2F09%2F18%2Fhello-word%2F</url>
     <content type="text"></content>
