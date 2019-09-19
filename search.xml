@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[abc]]></title>
     <url>%2F2019%2F09%2F19%2Fabc%2F</url>
-    <content type="text"><![CDATA[../images ./image]]></content>
+    <content type="text"><![CDATA[../images ./image ../${filename}]]></content>
   </entry>
   <entry>
     <title><![CDATA[Typora常用操作（MAC版）]]></title>
