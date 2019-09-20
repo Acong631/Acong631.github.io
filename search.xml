@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[解决flutter第三方库不支持当前版本问题]]></title>
+    <url>%2F2019%2F09%2F20%2FFlutter-01%2F</url>
+    <content type="text"><![CDATA[错误相关项目中使用了flutter_location_picker 这个第三方库处理选择地理位置信息，但是由于该版本库很久没更新导致不支持当前的flutter。在Install插入安装包的时候报如下错误： 123ERR: The current Flutter SDK version is 1.9.1+hotfix.2. Because flutter_location_picker requires Flutter SDK version &gt;=0.4.1 &lt;1.0.0, version solving failed. 解决办法 前往https://pub.flutter-io.cn/ 该库的主页，在右侧栏点击Repository(GitHub)前往该库的github主页。 点击右侧的Fork，将该库复制到自己的github 前往自己github中的flutter_location_picker项目，因为是版本不支持，只需要修改pubspec.yaml中的版型支持信息即可。 修改前： 123environment: sdk: &quot;&gt;=1.19.0 &lt;3.0.0&quot; flutter: &quot;&gt;=0.4.1 &lt;1.0.0&quot; 修改后： 123environment: sdk: &quot;&gt;=1.19.0 &lt;3.0.0&quot; flutter: &quot;&gt;=0.4.1 &lt;=2.1.0&quot; 修改完成后点击底部提交即可。 前往项目中的pubspec.yaml，修改flutter_location_picker引入方式为git 之前引入方式： 12#选择地区flutter_location_picker: ^0.06 现在引入方式： 12345#选择地区flutter_location_picker: git: url: https://github.com/Acong631/flutter_location_picker.git ref: 881a47dc3995e83a5da27d6acdb44ab100c9a130 url填写的是自己fork的项目地址，ref填写的是你修改pubspec.yaml提交对应的指针信息，用来控制版本信息。]]></content>
+      <categories>
+        <category>flutter</category>
+      </categories>
+      <tags>
+        <tag>flutter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Typora常用操作（MAC版）]]></title>
     <url>%2F2019%2F09%2F19%2FTyporaStudy%2F</url>
     <content type="text"><![CDATA[基本操作内容目录 语法 1[toc] 标题 语法 123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 快捷键 Cmd + 1-6 引用 语法 123&gt; 引用内容1&gt; 引用内容2&gt; &gt; 引用内容3 效果 引用内容1引用内容2 引用内容3 代码单行代码 语法 1`String str = &quot;helle&quot;;` 快捷键 英文输入法的情况下选择代码然后按 `键 （esc 下面那个） 效果 String str = &quot;helle&quot;; 多行代码 语法 123~~~int a = 10;int b = 20; 快捷键 Cmd + Alt + c 效果 12int a = 10;int b = 20; 列表无序列表 语法 123* 无序列表1+ 无序列表1- 无序列表1 快捷键 Cmd + Alt + u 效果 无序列表1 无序列表1 无序列表1 多行无序列表 语法 123* 多行无序列表1 (按键回车)TAB* 多行无序列表2(按键回车)TAB* 多行无序列表3 效果 多行无序列表1 多行无序列表2 多行无序列表2 有序列表 语法 1231. 有序列表12. 有序列表23. 有序列表3 快捷键 Cmd + Alt + o 效果 有序列表1 有序列表2 有序列表3 多行有序列表 语法 1231. 有序列表1 Tab 有序列表1.1 Tab 有序列表1.1.1 效果 有序列表1 有序列表1.1 有序列表1.1.1 任务列表 快捷键 Cmd + Alt + x 效果 看电视 玩游戏 睡觉 表格 快捷键 Cmd + Alt + t 效果 姓名 性别 年龄 1 1 20 链接图片 语法 123本地图片 ![路飞本地图片](/../../post_images/TyporaStudy/lufei.jpg)网络图片 ![路飞网络图片](https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1100135289,1342027030&amp;fm=26&amp;gp=0.jpg) 效果 本地图片效果 网络图片效果 图片路径问题 因为最终生成的博客要发布到github上，而上传到github上的时候路径只能显示scoure目录下面的文件所以要进行如下几步操作： 在scoure下面创建post_images目录 在Typora的偏好设置中进行如下修改 Typora-&gt;格式-&gt;图像-&gt;设置图片跟目录 选择当前编写的md文件。 然后直接把图片拖进来，系统会自动复制到对应的文件夹。上传到github上就可以看到图片了 超链接 语法 12345行内式链接 [BTGO游戏](http://html.youyo88.com/spread/plat/67989/1.html)自动式链接&lt;http://html.youyo88.com/spread/plat/67989/1.html&gt; 效果 BTGO游戏 http://html.youyo88.com/spread/plat/67989/1.html 行内链式快捷键 Cmd + k 其他斜体 语法 12*斜体1*_斜体2_ 效果 斜体1斜体2 快捷键 Cmd + b 加粗 语法 12**加粗1**__加粗2__ 效果 加粗1加粗2 快捷键 Cmd + i 下划线 语法 1&lt;u&gt;下划线&lt;/u&gt; 效果 下划线 快捷键 Cmd + u 删除线 语法 1~~删除线~~ 效果 删除线 分割线 语法 123***---___ 效果 参考文献]]></content>
