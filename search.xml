@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记录一下自己常用的命令]]></title>
+    <url>%2F2019%2F09%2F20%2FCommand%2F</url>
+    <content type="text"><![CDATA[flutter常用命令 名称 说明 flutter 列出所有的命令 flutter help 查看具体命令的帮助信息 flutter doctor 诊断flutte是否还需要安装其他依赖 flutter doctor -v 查看详细信息 flutter –version 查看flutter版本号 flutter channel 查看Flutter SDK所有分支信息 flutter channel stable(分支名称) 切换到stable分支 flutter upgrade 升级Flutter SDK（同时会更新相关的依赖包） flutter packages get 获取项目所有依赖包 flutter packages upgrade 更新项目依赖包的最新版本（不更新Flutter SDK中的依赖包） flutter run 运行项目（debug模式） flutter run –release 以release模式运行项目 flutter run -d 模拟器id 用指定模拟器运行项目 hexo常用命令 简写命令（只写了简写命令） hexo n blog 新建文章blog.md hexo n aaa bbb 新建文章bbb.md 文章标题为aaa hexo new page pageA 新建页面pageA hexo clean 清除缓存（上传github前最好清除一下） hexo g 生成静态网页 hexo s 启动本地服务器预览 hexo d 部署到远程服务器（github） hexo s -g hexo g + hexo s hexo d -g hexo g + hexo d npm install hexo -g 安装 npm update hexo -g 升级 hexo -v 查看hexo版本号]]></content>
+      <tags>
+        <tag>常用命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[解决flutter第三方库不支持当前版本问题]]></title>
     <url>%2F2019%2F09%2F20%2FFlutter-01%2F</url>
     <content type="text"><![CDATA[错误相关项目中使用了flutter_location_picker 这个第三方库处理选择地理位置信息，但是由于该版本库很久没更新导致不支持当前的flutter。在Install插入安装包的时候报如下错误： 123ERR: The current Flutter SDK version is 1.9.1+hotfix.2. Because flutter_location_picker requires Flutter SDK version &gt;=0.4.1 &lt;1.0.0, version solving failed. 解决办法 前往https://pub.flutter-io.cn/ 该库的主页，在右侧栏点击Repository(GitHub)前往该库的github主页。 点击右侧的Fork，将该库复制到自己的github 前往自己github中的flutter_location_picker项目，因为是版本不支持，只需要修改pubspec.yaml中的版型支持信息即可。 修改前： 123environment: sdk: &quot;&gt;=1.19.0 &lt;3.0.0&quot; flutter: &quot;&gt;=0.4.1 &lt;1.0.0&quot; 修改后： 123environment: sdk: &quot;&gt;=1.19.0 &lt;3.0.0&quot; flutter: &quot;&gt;=0.4.1 &lt;=2.1.0&quot; 修改完成后点击底部提交即可。 前往项目中的pubspec.yaml，修改flutter_location_picker引入方式为git 之前引入方式： 12#选择地区flutter_location_picker: ^0.06 现在引入方式： 12345#选择地区flutter_location_picker: git: url: https://github.com/Acong631/flutter_location_picker.git ref: 881a47dc3995e83a5da27d6acdb44ab100c9a130 url填写的是自己fork的项目地址，ref填写的是你修改pubspec.yaml提交对应的指针信息，用来控制版本信息。]]></content>
